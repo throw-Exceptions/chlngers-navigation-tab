@@ -5,11 +5,11 @@ import NavigationBar from './NavigationBar'
 import SearchPageLink from './SearchPageLink'
 
 const Header = () => {
-  const handleClickBookmark = (e: any): void => {
+  const handleClickBookmark = (): void => {
     console.log("go to bookmark page");
   };
 
-  const handleClickCart = (e: any): void => {
+  const handleClickCart = (): void => {
     console.log("go to cart page");
   };
 

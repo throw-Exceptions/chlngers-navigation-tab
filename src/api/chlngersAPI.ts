@@ -13,16 +13,16 @@ export type BannerAdType = {
 export const getBannerAdList = (): Promise<Array<BannerAdType>> => new Promise(
   resolve => {
     setTimeout(() => resolve([
-      // {
-      //   id: 1,
-      //   backgroundImageUrl: 'https://newsimg.hankookilbo.com/cms/articlerelease/2021/05/27/fb2f8f9f-b0fe-4468-bbe8-f182600f4a2e.jpg',
-      //   title: 'BTS 세트 먹고 ARMY 인증하자!',
-      //   description: '맥도날드 X 챌린저스',
-      //   participateNum: 123822,
-      //   startDate: 1625053452178,
-      //   category: '기타',
-      //   periodWeek: 4
-      // },
+      {
+        id: 1,
+        backgroundImageUrl: 'https://newsimg.hankookilbo.com/cms/articlerelease/2021/05/27/fb2f8f9f-b0fe-4468-bbe8-f182600f4a2e.jpg',
+        title: 'BTS 세트 10개 먹고 찐 ARMY 인증하자!',
+        description: '맥도날드 X 챌린저스',
+        participateNum: 123822,
+        startDate: 1625053452178,
+        category: '기타',
+        periodWeek: 4
+      },
       {
         id: 2,
         backgroundImageUrl: 'https://reactjs.org/logo-og.png',

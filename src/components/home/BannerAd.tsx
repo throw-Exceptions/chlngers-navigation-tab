@@ -35,12 +35,13 @@ const BannerAd = ({
 export default BannerAd;
 
 const Container = styled.div<ContainerProps>`
-  background-image: url(${props => props.backgroundUrl});
+  background-image: url(${(props: any) => props.backgroundUrl});
   background-size: cover;
-  width: 100%;
+  width: calc(100% - 0.5rem);
   height: 12rem;
   border-radius: 1rem;
   padding: 1.5rem 1.5rem 1rem 1.5rem;
+  margin: 0 0.25rem;
   box-sizing: border-box;
 `;
 
