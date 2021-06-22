@@ -1,10 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ImageButton } from './Button'
-import NavigationBar from './NavigationBar'
+import NavigationBar, { Tabs } from './NavigationBar'
 import SearchPageLink from './SearchPageLink'
 
-const Header = () => {
+type HeaderProps = {
+  currentTab: Tabs,
+  setCurrentTab: (tab: Tabs) => void
+};
+
+const Header = ({currentTab, setCurrentTab}: HeaderProps) => {
   const handleClickBookmark = (): void => {
     console.log("go to bookmark page");
   };
@@ -26,7 +31,7 @@ const Header = () => {
           onClick={handleClickCart}
         />
       </LinkSection>
-      <NavigationBar/>
+      <NavigationBar currentTab={currentTab} setCurrentTab={setCurrentTab} />
     </Container>
   )
 }

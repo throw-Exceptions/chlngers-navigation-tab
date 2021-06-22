@@ -2,19 +2,30 @@ import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 
-const NavigationBar = () => {
-  const [currentTab, setCurrentTab] = useState<string>('홈');
-  const tabList: Array<string> = ['홈', '인기', '신규', '추천'];
+export enum Tabs {
+  Home = '홈',
+  Popular = '인기',
+  New = '신규',
+  Recommand = '추천'
+};
+
+type NavigationBarProps = {
+  currentTab: Tabs,
+  setCurrentTab: (tab: Tabs) => void
+};
+
+const NavigationBar = ({currentTab, setCurrentTab}: NavigationBarProps) => {
+  const tabList: Array<Tabs> = [Tabs.Home, Tabs.Popular, Tabs.New, Tabs.Recommand];
 
   const handleClick = (e: any): void => {
-    const clickedTab: string = e.target.text;
+    const clickedTab: Tabs = e.target.text;
     setCurrentTab(clickedTab);
   };
 
   return (
     <StyledNav>
       {tabList.map(
-        (tab: string) => (tab === currentTab) ? (
+        (tab: Tabs) => (tab === currentTab) ? (
           <SelectedTab key={tab}>{tab}</SelectedTab>
         ) : (
           <Tab onClick={handleClick} key={tab}>{tab}</Tab>
