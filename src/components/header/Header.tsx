@@ -34,8 +34,13 @@ const Header = () => {
 export default Header
 
 const Container = styled.header`
+  position: fixed;
+  top: 0;
+  height: 7rem;
   width: 100%;
   border-bottom: 1px solid #eee;
+  background-color: #fff;
+  z-index: 1;
 `;
 
 const LinkSection = styled.section`
