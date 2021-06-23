@@ -22,10 +22,12 @@ const CategoryItem = ({src, name}: CategoryItemProps) => {
 export default CategoryItem;
 
 const Container = styled.div`
-  padding: 0.8rem;
+  width: 4rem;
+  height: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-contents: center;
 `;
 
 const StyledImg = styled.img`

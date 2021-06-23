@@ -21,7 +21,7 @@ const BannerAd = ({
       <Info>
         <Icon src="/icons/person_white.png"/>
         {bannerAd.participateNum}명 참가
-        · {remainDates > 0 ? `${remainDates}일 뒤 시작` : '오늘 시작'}
+        · {remainDates > 0 ? `${remainDates}일 뒤 시작` : '오늘부터 시작'}
         {bannerAd.maxParticipateNum && ` · 선착순 ${bannerAd.maxParticipateNum - bannerAd.participateNum}명 남음`}
       </Info>
       <TagList>

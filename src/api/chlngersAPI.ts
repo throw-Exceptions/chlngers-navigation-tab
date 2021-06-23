@@ -37,3 +37,88 @@ export const getBannerAdList = (): Promise<Array<BannerAdType>> => new Promise(
     ]), 200);
   }
 );
+
+export const getPopularChallengeList = (category: string, num: number): Promise<Array<ChallengeType>> => new Promise(
+  resolve => {
+    setTimeout(() => {
+      resolve(
+        challenges
+          .filter(challenge => challenge.category === category)
+          .sort((a, b) => b.participateNum - a.participateNum)
+          .slice(0, num)
+      )
+    }, 200);
+  }
+);
+
+
+export type ChallengeType = {
+  id: number,
+  imageUrl: string,
+  hostName: string,
+  hostProfileImage: string,
+  title: string,
+  startTime: number,
+  participateNum: number,
+  maxParticipateNum?: number,
+  certNumPerWeek: number,
+  periodWeek: number,
+  category: string,
+  description: string
+};
+
+const challenges: Array<ChallengeType> = [
+  {
+    id: 1,
+    imageUrl: '',
+    hostName: '공식 챌린지',
+    hostProfileImage: '/icons/official_challenge_mark_new.png',
+    title: '매주 1kg 감량하기',
+    description: '',
+    participateNum: 420,
+    startTime: 1625053452178,
+    category: '건강',
+    periodWeek: 4,
+    certNumPerWeek: 1
+  },
+  {
+    id: 2,
+    imageUrl: '',
+    hostName: '공식 챌린지',
+    hostProfileImage: '/icons/official_challenge_mark_new.png',
+    title: '홈트 영상 보며 운동하기',
+    description: '',
+    participateNum: 215,
+    startTime: 1625053452178,
+    category: '건강',
+    periodWeek: 2,
+    certNumPerWeek: 4
+  },
+  {
+    id: 3,
+    imageUrl: '',
+    hostName: '공식 챌린지',
+    hostProfileImage: '/icons/official_challenge_mark_new.png',
+    title: '매일 헬스장 가기',
+    description: '',
+    participateNum: 1213,
+    startTime: 1625053452178,
+    category: '건강',
+    periodWeek: 4,
+    certNumPerWeek: 5
+  },
+  {
+    id: 4,
+    imageUrl: '',
+    hostName: '공식 챌린지',
+    hostProfileImage: '/icons/official_challenge_mark_new.png',
+    title: '1만보 걷기',
+    description: '',
+    participateNum: 3215,
+    startTime: 1625053452178,
+    category: '건강',
+    periodWeek: 2,
+    certNumPerWeek: 3
+  },
+];
+
