@@ -1,5 +1,5 @@
 import React from 'react';
-import Screen from '@components/Screen';
+import Screen from '@components/common/Screen';
 
 const RecommandTab:React.FC = () => {
   return (

@@ -1,11 +1,13 @@
 import React from 'react';
-import Screen from '@components/Screen';
+import Screen from '@components/common/Screen';
 import BannerAdList from './BannerAdList';
+import CategoryList from './CategoryList';
 
 const HomeTab = () => {
   return (
     <Screen>
-      <BannerAdList/>
+      <BannerAdList />
+      <CategoryList />
     </Screen>
   )
 };
