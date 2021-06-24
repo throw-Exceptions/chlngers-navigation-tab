@@ -46,7 +46,19 @@ export const getPopularChallengeList = (category: string, num: number): Promise<
           .filter(challenge => challenge.category === category)
           .sort((a, b) => b.participateNum - a.participateNum)
           .slice(0, num)
-      )
+      );
+    }, 200);
+  }
+);
+
+export const getAllPopularChallengeList = (num: number): Promise<Array<ChallengeType>> => new Promise(
+  resolve => {
+    setTimeout(() => {
+      resolve(
+        challenges
+          .sort((a, b) => b.participateNum - a.participateNum)
+          .slice(0, num)
+      );
     }, 200);
   }
 );

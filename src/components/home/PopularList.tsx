@@ -1,12 +1,10 @@
 import BigButton from '@components/common/BigButton';
 import ChallengeCardList from '@components/common/ChallengeCardList';
 import SectionTitle from '@components/common/SectionTitle';
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ChallengeType, getPopularChallengeList } from 'src/api/chlngersAPI';
 import styled from 'styled-components';
-import PopularCategoryList from './PopularCategoryList';
+import PopularCategoryList from '../popular/PopularCategoryList';
 
 const PopularList = () => {
   const [challengeList, setChallengeList] = useState<Array<ChallengeType>>([]);
@@ -15,7 +13,7 @@ const PopularList = () => {
     console.log("move to popular challenge tab");
   };
 
-  const handleClickCategory = async (category: string) => {
+  const handleChangeCategory = async (category: string) => {
     const list: Array<ChallengeType> = await getPopularChallengeList(category, 4);
     setChallengeList(list);
   };
@@ -24,23 +22,12 @@ const PopularList = () => {
     console.log("move to popular challenge tab");
   };
 
-  useEffect(
-    () => {
-      const initialize = async () => {
-        const list: Array<ChallengeType> = await getPopularChallengeList('건강', 4);
-        setChallengeList(list);
-      }
-      initialize();
-    },
-    []
-  );
-
   return (
     <Container>
       <TitleDiv>
         <SectionTitle title="인기 챌린지" useLink={true} onClickLink={handleClickArrow}/>
       </TitleDiv>
-      <PopularCategoryList onClick={handleClickCategory}/>
+      <PopularCategoryList onChangeCategory={handleChangeCategory} useAll={false}/>
       <ListDiv>
         <ChallengeCardList list={challengeList}/>
       </ListDiv>
