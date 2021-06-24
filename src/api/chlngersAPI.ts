@@ -87,7 +87,13 @@ export type ChallengeType = {
 };
 
 let idGenerator: number = 0;
-
+const imageList = [
+  'https://i.picsum.photos/id/128/400/300.jpg?hmac=p8RUmI7mpCSNEfKXLUX--cC_zRXZBul9xJYmnHd96y0',
+  'https://i.picsum.photos/id/695/400/300.jpg?hmac=9tJAg5dWIca9duihDOD_e8LZqGGEIec1jRxB0PPD3xM',
+  'https://i.picsum.photos/id/133/400/300.jpg?hmac=nrD3ebTDg1FAv6vmhX2hJwlEqCPprXfHEAdpgiOj6ZM',
+  'https://i.picsum.photos/id/875/400/300.jpg?hmac=75U_unLuIsph0ewfL5QZehxImYbct2HCZYuMRtd0QHo',
+  'https://i.picsum.photos/id/774/400/300.jpg?hmac=3hyfw8sotjAttd8Oj02-LF6d2pMVguoG1LRxsqNHjpM'
+];
 const createChallenge = (
   title: string,
   description: string,
@@ -95,7 +101,7 @@ const createChallenge = (
 ): ChallengeType => {
   return {
     id: idGenerator++,
-    imageUrl: '',
+    imageUrl: imageList[Math.floor(Math.random() * imageList.length)],
     hostName: '공식 챌린지',
     hostProfileImage: '/icons/official_challenge_mark_new.png',
     title,

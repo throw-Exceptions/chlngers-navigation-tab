@@ -53,6 +53,7 @@ const Background = styled.div<BackgroundProps>`
   height: 7.5rem;
   border-radius: 0.3rem;
   background-image: url(${props => props.src});
+  background-size: contain;
   background-color: #ccc;
   display: flex;
   flex-direction: row-reverse;
