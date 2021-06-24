@@ -67,58 +67,52 @@ export type ChallengeType = {
   description: string
 };
 
+let idGenerator = 0;
+
+const createChallenge = (
+  title: string,
+  description: string,
+  category: string,
+): ChallengeType => {
+  return {
+    id: idGenerator++,
+    imageUrl: '',
+    hostName: '공식 챌린지',
+    hostProfileImage: '/icons/official_challenge_mark_new.png',
+    title,
+    description,
+    participateNum: Math.floor(Math.random() * 2000) + 10,
+    startTime: Number(new Date()) + Math.floor(Math.random() * 10) * 100000000,
+    category,
+    periodWeek: Math.floor(Math.random() * 6) + 2,
+    certNumPerWeek: Math.floor(Math.random() * 6)
+  }
+};
+
 const challenges: Array<ChallengeType> = [
-  {
-    id: 1,
-    imageUrl: '',
-    hostName: '공식 챌린지',
-    hostProfileImage: '/icons/official_challenge_mark_new.png',
-    title: '매주 1kg 감량하기',
-    description: '',
-    participateNum: 420,
-    startTime: 1625053452178,
-    category: '건강',
-    periodWeek: 4,
-    certNumPerWeek: 1
-  },
-  {
-    id: 2,
-    imageUrl: '',
-    hostName: '공식 챌린지',
-    hostProfileImage: '/icons/official_challenge_mark_new.png',
-    title: '홈트 영상 보며 운동하기',
-    description: '',
-    participateNum: 215,
-    startTime: 1625053452178,
-    category: '건강',
-    periodWeek: 2,
-    certNumPerWeek: 4
-  },
-  {
-    id: 3,
-    imageUrl: '',
-    hostName: '공식 챌린지',
-    hostProfileImage: '/icons/official_challenge_mark_new.png',
-    title: '매일 헬스장 가기',
-    description: '',
-    participateNum: 1213,
-    startTime: 1625053452178,
-    category: '건강',
-    periodWeek: 4,
-    certNumPerWeek: 5
-  },
-  {
-    id: 4,
-    imageUrl: '',
-    hostName: '공식 챌린지',
-    hostProfileImage: '/icons/official_challenge_mark_new.png',
-    title: '1만보 걷기',
-    description: '',
-    participateNum: 3215,
-    startTime: 1625053452178,
-    category: '건강',
-    periodWeek: 2,
-    certNumPerWeek: 3
-  },
+  createChallenge('매주 1kg 감량하기', '', '건강'),
+  createChallenge('홈트 영상 보며 운동하기', '', '건강'),
+  createChallenge('1만보 걷기', '', '건강'),
+  createChallenge('매일 헬스장 가기', '', '건강'),
+  createChallenge('[반보] 영어 강의 체험하기', '', '역량'),
+  createChallenge('책읽기', '', '역량'),
+  createChallenge('하루 1시간 공부', '', '역량'),
+  createChallenge('블로그 글쓰기', '', '역량'),
+  createChallenge('우리 동네 동식물 사진찍기', '', '정서'),
+  createChallenge('반려식물 물 주기', '', '정서'),
+  createChallenge('반려동물과 산책하기', '', '정서'),
+  createChallenge('부모님께 전화드리기', '', '정서'),
+  createChallenge('재테크 영상보기', '', '자산'),
+  createChallenge('경제기사 읽기', '', '자산'),
+  createChallenge('매 주 5만원 통장에 저금하기', '', '자산'),
+  createChallenge('중고거래 앱에서 리셀링 실천하기', '', '자산'),
+  createChallenge('미라클모닝 | 아침 8시 일어나기', '', '생활'),
+  createChallenge('2021 하반기 계획 세우기', '', '생활'),
+  createChallenge('[하루도전] 할일3가지 쓰기', '', '생활'),
+  createChallenge('팩하기', '', '생활'),
+  createChallenge('[라이프] 사진전 관람하기', '', '취미'),
+  createChallenge('악기 연습하기', '', '취미'),
+  createChallenge('[배민커넥트] 동네에서 운동하며 용돈벌기', '', '취미'),
+  createChallenge('집밥 요리하기', '', '취미'),
 ];
 
