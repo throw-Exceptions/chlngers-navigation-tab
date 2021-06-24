@@ -23,7 +23,7 @@ const CategoryList: React.FC = () => {
       <List>
         {categories.map(
           category => (
-            <CategoryItem 
+            <CategoryItem
               name={category.name}
               src={category.src}
               key={category.name} />

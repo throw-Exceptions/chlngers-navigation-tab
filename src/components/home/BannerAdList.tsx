@@ -10,12 +10,12 @@ SwiperCore.use([Autoplay]);
 
 const BannerAdList = () => {
   const [bannerAdList, setBannerAdList] = useState<Array<BannerAdType>>([]);
-  
+
   const initialize = async () => {
     const list: Array<BannerAdType> = await getBannerAdList();
     setBannerAdList(list);
   };
-  
+
   useEffect(
     () => {
       initialize();

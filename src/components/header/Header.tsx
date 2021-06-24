@@ -22,12 +22,12 @@ const Header = ({currentTab, setCurrentTab}: HeaderProps) => {
     <Container>
       <LinkSection>
         <SearchPageLink/>
-        <ImageButton 
-          path="/icons/bookmark_black.png" 
+        <ImageButton
+          path="/icons/bookmark_black.png"
           onClick={handleClickBookmark}
         />
-        <ImageButton 
-          path="/icons/cart.svg" 
+        <ImageButton
+          path="/icons/cart.svg"
           onClick={handleClickCart}
         />
       </LinkSection>

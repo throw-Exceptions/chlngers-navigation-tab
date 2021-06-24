@@ -44,7 +44,7 @@ const PopularList = () => {
       <ListDiv>
         <ChallengeCardList list={challengeList}/>
       </ListDiv>
-      <BigButton 
+      <BigButton
         title="인기 건강 챌린지 전체 보기"
         onClick={handleClickButton}
       />

@@ -13,14 +13,15 @@ const PopularCategoryList = ({onClick}: PopularCategoryListProps) => {
     onClick(category);
     setCurrentCategory(category);
   };
-  
+
   return (
     <Container>
       {popularCategoryList.map(
         category => (
-          <CategoryItem 
+          <CategoryItem
             selected={category === currentCategory}
             onClick={() => handleClick(category)}
+            key={category}
           >
             {category}
           </CategoryItem>
