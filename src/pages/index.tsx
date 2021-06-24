@@ -7,17 +7,20 @@ import { Tabs } from '@components/header/NavigationBar';
 import PopularTab from '@components/popular/PopularTab';
 import NewTab from '@components/new/NewTab';
 import RecommandTab from '@components/recommand/RecommandTab';
+import UserProvider from 'src/contexts/UserContext';
 
 const Home: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<Tabs>(Tabs.Home);
   return (
-    <Container>
-      <Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
-      {currentTab === Tabs.Home && <HomeTab/>}
-      {currentTab === Tabs.Popular && <PopularTab/>}
-      {currentTab === Tabs.New && <NewTab/>}
-      {currentTab === Tabs.Recommand && <RecommandTab/>}
-    </Container>
+    <UserProvider>
+      <Container>
+        <Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
+        {currentTab === Tabs.Home && <HomeTab/>}
+        {currentTab === Tabs.Popular && <PopularTab/>}
+        {currentTab === Tabs.New && <NewTab/>}
+        {currentTab === Tabs.Recommand && <RecommandTab/>}
+      </Container>
+    </UserProvider>
   );
 };
 
