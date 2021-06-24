@@ -3,6 +3,7 @@ import Screen from '@components/common/Screen';
 import BannerAdList from './BannerAdList';
 import CategoryList from './CategoryList';
 import PopularList from './PopularList';
+import TryAgainList from './TryAgainList';
 
 const HomeTab = () => {
   return (
@@ -10,6 +11,7 @@ const HomeTab = () => {
       <BannerAdList />
       <CategoryList />
       <PopularList />
+      <TryAgainList />
     </Screen>
   )
 };

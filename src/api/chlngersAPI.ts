@@ -51,6 +51,13 @@ export const getPopularChallengeList = (category: string, num: number): Promise<
   }
 );
 
+export const getMyChallengeList = (num: number): Promise<Array<ChallengeType>> => new Promise(
+  resolve => setTimeout(() => resolve(
+    myChallenges
+      .slice(0, num)
+      .map(id => challenges.find(challenge => challenge.id === id) as ChallengeType)
+  ), 200)
+);
 
 export type ChallengeType = {
   id: number,
@@ -67,7 +74,7 @@ export type ChallengeType = {
   description: string
 };
 
-let idGenerator = 0;
+let idGenerator: number = 0;
 
 const createChallenge = (
   title: string,
@@ -116,3 +123,4 @@ const challenges: Array<ChallengeType> = [
   createChallenge('집밥 요리하기', '', '취미'),
 ];
 
+const myChallenges: Array<number> = [1, 2, 5, 6, 7, 10, 14, 15];
