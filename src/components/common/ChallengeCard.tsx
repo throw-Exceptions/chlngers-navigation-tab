@@ -23,7 +23,13 @@ const ChallengeCard = ({challenge}: ChallengeCardProps) => {
       <Title>{challenge.title}</Title>
       <RemainDate>{remainDates > 0 ? `${remainDates}일 뒤 시작` : '오늘부터 시작'}</RemainDate>
       <BadgeList>
-        <Badge>주{challenge.certNumPerWeek}회</Badge>
+        <Badge>
+          {challenge.certNumPerWeek > 0 ? (
+            `주${challenge.certNumPerWeek}회`
+          ) : (
+            '기타'
+          )}
+        </Badge>
         <Badge>{challenge.periodWeek}주동안</Badge>
       </BadgeList>
     </Container>
