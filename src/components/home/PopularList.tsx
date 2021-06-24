@@ -15,8 +15,9 @@ const PopularList = () => {
     console.log("move to popular challenge tab");
   };
 
-  const handleClickCategory = (category: string) => {
-    // TODO: get category data
+  const handleClickCategory = async (category: string) => {
+    const list: Array<ChallengeType> = await getPopularChallengeList(category, 4);
+    setChallengeList(list);
   };
 
   const handleClickButton = () => {
